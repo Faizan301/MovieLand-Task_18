@@ -5,15 +5,16 @@ import MovieCard from "./MovieCard";
 import './App.css';
 import SearchIcon from './search.svg';
 
-const API_URL = 'http://www.omdbapi.com?apikey=b6003d8a';
+// const API_URL = 'https://www.omdbapi.com/?i=[IMDB_ID]&apikey=[API_KEY]';
+const API_URL = 'https://www.omdbapi.com/?i=tt3896198&apikey=4edffe48'
 
-const movie1 = {
+/* const movie1 = {
     "Title": "Spiderman the Verse",
     "Year": "2019–",
     "imdbID": "tt12122034",
     "Type": "series",
     "Poster": "https://m.media-amazon.com/images/M/MV5BNjA2NmZhOGEtZTQ5OS00MDI0LTg4N2UtYTRmOTllM2I2NDlhXkEyXkFqcGdeQXVyNTU4OTE5Nzc@._V1_SX300.jpg"
-}
+} */
 
 const App = () => {
     const [movies, setMovies] = useState([]);
@@ -28,7 +29,7 @@ const App = () => {
 
     useEffect(() => {
         searchMovies('Spiderman');
-    }, [])
+    }, []);
 
     return (
         <div className="app">
@@ -42,7 +43,7 @@ const App = () => {
                 />
                 <img
                     src={SearchIcon}
-                    alt="search"
+                    alt="searchIcon"
                     onClick={() => searchMovies(searchTerm)} 
                 />
             </div>
